@@ -1,11 +1,11 @@
 const express=require("express")
-const router=express.Router
+const router=express.Router()
+const usersController=require("../contollers/usersController")
 
-
-router.route("/")
-    .get()
-    .post()
-    .patch()
-    .delete()
+router.route('/')
+    .get(usersController.getAllUsers)
+    .post(usersController.createNewUser)
+    .patch(usersController.updateUser)
+    .delete(usersController.deleteUser)
 
 module.exports=router
